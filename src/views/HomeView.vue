@@ -67,8 +67,10 @@ onMounted(() => {
         display: flex;
         transform: translate(-33.333333%);
         p {
+          text-transform: uppercase;
           padding-left: 32px;
           font-weight: 600;
+          letter-spacing: 4px;
           margin: 0;
           font-size: customClamp(96px, 196px, 536px, 1200px);
         }
