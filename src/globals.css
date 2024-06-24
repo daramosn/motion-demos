@@ -58,9 +58,8 @@ html {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  scroll-behavior: smooth;
-  height: auto !important;
-  width: auto !important;
+  height: auto;
+  width: auto;
   /* overflow-x: clip; */
 }
 
