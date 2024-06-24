@@ -1,5 +1,5 @@
 <template>
-  <main class="infinite-scroll">
+  <main class="infinite-text">
     <section>
       <img :src="image1" alt="art-museum" />
       <div class="text-container">
@@ -47,7 +47,7 @@ onMounted(() => {
 </script>
 
 <style>
-.infinite-scroll {
+.infinite-text {
   height: 200vh;
 
   section {
@@ -59,6 +59,7 @@ onMounted(() => {
       object-fit: cover;
     }
     .text-container {
+      font-family: 'Bebas Neue';
       position: fixed;
       bottom: 32px;
       text-wrap: nowrap;
