@@ -14,9 +14,11 @@
 </template>
 
 <script lang="ts" setup>
-import { animate, scroll } from 'motion'
+import gsap from 'gsap'
+
 import { onMounted } from 'vue'
 import image1 from '../assets/images/art-museum.jpg'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 let progress = 0
 let direction = 1
@@ -28,7 +30,7 @@ function slide() {
   if (0 < progress) progress = -100 / 3
   $text.style.transform = `translateX(${-100 / 3 + progress}%)`
 
-  progress += 0.02 * direction
+  progress += 0.03 * direction
 
   requestAnimationFrame(slide)
 }
@@ -36,13 +38,27 @@ function slide() {
 onMounted(() => {
   slide()
 
-  let lastProgress = 0
-  scroll((info) => {
-    if (info.y.progress > lastProgress && direction === -1) direction = 1
-    if (info.y.progress < lastProgress && direction === 1) direction = -1
-    lastProgress = info.y.progress
+  // GSAP
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.to('.text-container', {
+    scrollTrigger: {
+      trigger: document.body,
+      start: 0,
+      end: window.innerHeight,
+      scrub: 0.3,
+      onUpdate: (e) => (direction = -e.direction)
+    },
+    x: '-=300px'
   })
-  scroll(animate('.text-container', { x: [0, 500 * direction + 'px'] }, { easing: 'ease-in' }))
+
+  // // Motion one
+  // let lastProgress = 0
+  // scroll((info) => {
+  //   if (info.y.progress > lastProgress && direction === -1) direction = 1
+  //   if (info.y.progress < lastProgress && direction === 1) direction = -1
+  //   lastProgress = info.y.progress
+  // })
+  // scroll(animate('.text-container', { x: [0, 500 * direction + 'px'] }, { easing: 'ease-in' }))
 })
 </script>
 
