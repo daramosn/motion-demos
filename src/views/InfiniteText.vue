@@ -15,10 +15,9 @@
 
 <script lang="ts" setup>
 import gsap from 'gsap'
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted } from 'vue'
 import image1 from '../assets/images/art-museum.jpg'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 let progress = 0
 let direction = 1
@@ -42,9 +41,9 @@ onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
   gsap.to('.text-container', {
     scrollTrigger: {
-      trigger: document.body,
-      start: 0,
-      end: window.innerHeight,
+      trigger: document.body.querySelector('section'),
+      start: 'top top',
+      end: 'bottom top',
       scrub: 0.3,
       onUpdate: (e) => (direction = -e.direction)
     },
