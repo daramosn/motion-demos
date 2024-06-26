@@ -16,6 +16,7 @@
   text-align: center;
   h1 {
     font-size: 64px;
+    margin-bottom: 64px;
   }
   ul {
     list-style: none;
@@ -24,6 +25,17 @@
   }
   li {
     font-size: customClamp(24px, 32px, 536px, 1200px);
+    padding: 32px 16px;
+    color: rgb(187, 187, 187);
+    transition: color ease-out 0.2s;
+    border-bottom: 1px solid white;
+    &:first-child {
+      border-top: 1px solid white;
+    }
+    &:hover {
+      color: white;
+    }
+
     a {
       text-decoration: none;
       color: currentColor;
