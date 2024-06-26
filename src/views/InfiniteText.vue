@@ -1,6 +1,6 @@
 <template>
   <main class="infinite-text">
-    <section>
+    <section class="hero">
       <img :src="image1" alt="art-museum" />
       <div class="text-container">
         <div class="text">
@@ -9,6 +9,13 @@
           <p aria-hidden="true">Infinite text with move on scroll -</p>
         </div>
       </div>
+    </section>
+    <section class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum in fugiat ullam optio quidem
+        error, sequi eius, adipisci delectus voluptas doloremque voluptatem aliquid! Nisi voluptas
+        quis totam quidem dolor. Minus?
+      </p>
     </section>
   </main>
 </template>
@@ -65,7 +72,7 @@ onMounted(() => {
 .infinite-text {
   height: 200vh;
 
-  section {
+  .hero {
     height: 100svh;
     contain: paint;
     img {
@@ -91,6 +98,21 @@ onMounted(() => {
           font-size: customClamp(96px, 196px, 536px, 1200px);
         }
       }
+    }
+  }
+
+  .content {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: max(32px, calc((100% - 1200px) / 2));
+
+    p {
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-wrap: pretty;
+      margin: 0;
+      font-size: customClamp(32px, 42px, 536px, 1200px);
     }
   }
 }
