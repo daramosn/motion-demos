@@ -1,9 +1,10 @@
 <template>
   <main class="home">
-    <h1>Motion exercises</h1>
+    <h1>Motion demos</h1>
     <section>
       <ul>
         <li><RouterLink to="/infinite-text"> Infinite text with move on scroll</RouterLink></li>
+        <li><RouterLink to="/floating-gallery"> Floating gallery</RouterLink></li>
       </ul>
     </section>
   </main>
