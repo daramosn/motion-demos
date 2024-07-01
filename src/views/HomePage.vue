@@ -5,6 +5,7 @@
       <ul>
         <li><RouterLink to="/infinite-text"> Infinite text with move on scroll</RouterLink></li>
         <li><RouterLink to="/floating-gallery"> Floating gallery</RouterLink></li>
+        <li><RouterLink to="/mask-cursor"> Mask cursor</RouterLink></li>
       </ul>
     </section>
   </main>
