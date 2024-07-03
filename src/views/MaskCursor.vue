@@ -74,6 +74,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
     border-radius: 50%;
     width: 32px;
     height: 32px;
+    transform: translate(-100px, -100px);
     background-color: white;
     mix-blend-mode: difference;
     pointer-events: none;
