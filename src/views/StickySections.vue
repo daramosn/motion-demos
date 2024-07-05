@@ -14,27 +14,27 @@
     <section>
       <article>
         <img :src="img1" alt="golden-figure" />
-        <h2>THE ALGORITHM</h2>
+        <h2>THE <span> ALGORITHM</span></h2>
         <p>The algorithm's workings are shrouded in complexity.</p>
       </article>
       <article>
         <img :src="img2" alt="golden-figure-2" />
-        <h2>THE DOGMA</h2>
+        <h2>THE <span> DOGMA </span></h2>
         <p>Enshrining the principles of conformity and reinforcing the status quo.</p>
       </article>
       <article>
         <img :src="img3" alt="golden-figure-3" />
-        <h2>THE ARCHITECTS</h2>
+        <h2>THE <span> ARCHITECTS </span></h2>
         <p>The elusive entities, lacking human form, operate in the shadows.</p>
       </article>
       <article>
         <img :src="img4" alt="golden-figure-4" />
-        <h2>THE WASTELAND</h2>
+        <h2>THE <span> WASTELAND </span></h2>
         <p>This overlooked realm, a consequence of algorithmic judgments.</p>
       </article>
       <article>
         <img :src="img6" alt="golden-figure-6" />
-        <h2>THE NARRATIVE</h2>
+        <h2>THE <span> NARRATIVE </span></h2>
         <p>The collective story sculpted by the architects.</p>
       </article>
     </section>
@@ -141,8 +141,8 @@ onMounted(() => {
     padding: 32px;
     overflow: clip;
     background-color: #0e0d0b;
-
     text-align: center;
+    text-wrap: balance;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,9 +152,21 @@ onMounted(() => {
     }
     img {
       width: 50%;
+      min-width: 285px;
+      margin-bottom: 32px;
       object-fit: cover;
     }
+    h2 {
+      font-size: customClamp(32px, 48px, 536px, 1200px);
+      font-weight: 200;
+      span {
+        font-family: 'Bebas neue';
+        font-weight: 700;
+        letter-spacing: 8px;
+      }
+    }
     p {
+      padding: 8px 32px;
       padding-left: 32px;
       font-weight: 600;
       letter-spacing: 4px;
