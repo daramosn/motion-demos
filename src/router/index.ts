@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue'
 import MaskCursor from '@/views/MaskCursor.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import InfiniteText from '../views/InfiniteText.vue'
+import StickySections from '@/views/StickySections.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,8 +15,8 @@ const router = createRouter({
     },
     { path: '/infinite-text', name: 'Infinite text', component: InfiniteText },
     { path: '/floating-gallery', name: 'Floating gallery', component: FloatingGallery },
-    { path: '/mask-cursor', name: 'Mask cursor', component: MaskCursor }
-    // { path: '/sticky-sections', name: 'Sticky sections', component: StickySections },
+    { path: '/mask-cursor', name: 'Mask cursor', component: MaskCursor },
+    { path: '/sticky-sections', name: 'Sticky sections', component: StickySections }
     // { path: '/test', name: 'Test stuff', component: TestStuff }
   ]
 })
